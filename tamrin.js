@@ -31,21 +31,21 @@ function Comments(){
 
 
 function ElementBuilder(tagname){
-    const element = document.createElement(tagname);
+    element = document.createElement(tagname);
 
 
     this.text = function(input){
         element.innerText = input;
-        return element;
+        return this;
     }
 
     this.appendTo = function(root){
         root.appendChild(element);
-        return element;
+        return this;
     }
 
     this.build = function(){
-        return element;
+        return this.element;
     }
 
 
